@@ -9,7 +9,7 @@ export default function Rockets({ rockets, cardClick }){
     })
     
     return(
-        <div className='rockets'>
+        <div className='rocketsDiv'>
             <h1>Rockets</h1>
             {rocketCards}
         </div>

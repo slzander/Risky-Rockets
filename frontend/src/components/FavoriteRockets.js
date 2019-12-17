@@ -2,16 +2,16 @@ import React from 'react'
 import RocketCard from './RocketCard'
 
 export default function FavoriteRockets({ favorites, cardClick }){
-    // const favoriteCards = favorites.map(favorite => {
-    //     <RocketCard
-    //         rocket={favorite}
-    //         cardClick={cardClick} />
-    // })
+    const favoriteCards = favorites.map(favorite => {
+        return <RocketCard
+            rocket={favorite}
+            cardClick={cardClick} />
+    })
     
     return(
-        <div>
+        <div className='favoritesDiv'>
             <h1>Favorites</h1>
-            {/* {favoriteCards} */}
+            {favoriteCards}
         </div>
     )
 }

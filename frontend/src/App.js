@@ -27,7 +27,11 @@ class App extends React.Component {
   }
 
   removeFromFavorites = (rocket) => {
-    
+    const filteredFavorites = this.state.favorites.filter(favorite => {
+      return favorite !== rocket ? rocket : null
+    })
+
+    this.setState({ favorites: filteredFavorites})
   }
 
   filterRockets = () => {
@@ -37,12 +41,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Rockets
-          rockets={this.state.rockets}
-          cardClick={this.addToFavorites} />
-        <FavoriteRockets
-          favorites={this.state.favorites}
-          cardClick={this.removeFromFavorites} />
+        <header>
+          <h1>RISKY ROCKETS</h1>
+        </header>
+        <body>
+          <Rockets
+            rockets={this.state.rockets}
+            cardClick={this.addToFavorites} />
+          <FavoriteRockets
+            favorites={this.state.favorites}
+            cardClick={this.removeFromFavorites} />
+        </body>
       </div>
     )
   }
